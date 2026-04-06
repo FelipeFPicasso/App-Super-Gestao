@@ -31,31 +31,10 @@ Route::get('/produtos', function(){return "Produtos";})->name('app.produtos');
 
 });
 
-Route::get('/rota1', function(){
-    echo 'Rota1';
-})->name('site.rota1');
+Route::get('/teste/{p1}/{p2}', 'TestController@teste')-> name('teste');
 
 
-/*Route::get('/rota2', function(){
-    return redirect()->route('site.rota1');
-})->name('site.rosa2');
-*/
 
 Route::fallback(function() {
    echo 'A rota acessada não existe. <a href="'.route('site.index').'">Clique aqui</a> para ir para a página inicial';
 });
-
-//Route::redirect('/rota2', '/rota1');
-
-/*
-Route::get(
-    '/contato/{nome}/{categoria_id}', 
-    function(
-        string $nome = 'Desconhecido',
-        int $categoria_id = 1
-
-    ){
-        echo "Estamos aqui: $nome - $categoria_id";
-    }
-)->where('categoria_id', '[0-9]+') ->where('nome', '[A-Za-z]+');*/
-
