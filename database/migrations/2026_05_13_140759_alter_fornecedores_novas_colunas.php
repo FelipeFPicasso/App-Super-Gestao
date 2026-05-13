@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class AlterFornecedoresNovasColunas extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        //
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('fornecedores', function (Blueprint $table) {
+           //remover colunas
+           //$table->dropColumn('uf');
+           //$table->dropColumn('email');
+           $table->dropColumn(['uf', 'email']);
+           });
+
+    }
+}
