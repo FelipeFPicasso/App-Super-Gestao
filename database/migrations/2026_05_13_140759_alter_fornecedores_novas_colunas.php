@@ -13,7 +13,12 @@ class AlterFornecedoresNovasColunas extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('fornecedores', function (Blueprint $table) {
+            $table->string('uf', 2);
+            $table->string('email', 150);
+
+        });
+
     }
 
     /**
